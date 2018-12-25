@@ -51,7 +51,7 @@ class Role extends GenericRole implements HierarchicalRoleInterface
      */
     public function setParent($parent)
     {
-        if (! is_string($parent) && $parent instanceof RoleInterface) {
+        if (! is_string($parent) && ! $parent instanceof RoleInterface) {
             throw new InvalidRoleException($parent);
         }
 

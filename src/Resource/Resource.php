@@ -47,7 +47,7 @@ class Resource extends GenericResource implements HierarchicalResourceInterface
      */
     public function setParent($parent)
     {
-        if (! is_string($parent) && $parent instanceof ResourceInterface) {
+        if (! is_string($parent) && ! $parent instanceof ResourceInterface) {
             throw new InvalidResourceException($parent);
         }
 
