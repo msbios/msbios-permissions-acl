@@ -1,0 +1,52 @@
+{
+  "name": "msbios/permissions-acl",
+  "description": "MSBios Permissions Acl",
+  "license": "MIT",
+  "keywords": [
+    "php"
+  ],
+  "homepage": "https://github.com/msbios/msbios-permissions-acl",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Judzhin Miles",
+      "email": "info@msbios.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "MSBios\\Permissions\\Acl\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MSBiosTest\\Permissions\\Acl\\": "tests/"
+    }
+  },
+  "require": {
+    "zendframework/zend-permissions-acl": "^2.7",
+    "msbios/cache": "^1.0"
+  },
+  "require-dev": {
+    "msbios/application": "^1.0",
+    "msbios/debug": "^1.0",
+    "msbios/test": "^1.0"
+  },
+  "scripts": {
+    "cs-check": "phpcs",
+    "cs-fix": "phpcbf",
+    "test": [
+      "@cs-check",
+      "phpunit --colors=always"
+    ],
+    "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
+    "upload-coverage": "coveralls -v",
+    "themes": "cd public && ln -s ../themes/default/public default",
+    "serve": "php -S 0.0.0.0:3107 -t public public/index.php"
+  },
+  "extra": {
+    "zf": {
+      "component": "MSBios\\Permissions\\Rbac"
+    }
+  }
+}
