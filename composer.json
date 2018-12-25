@@ -46,7 +46,7 @@
   },
   "extra": {
     "zf": {
-      "component": "MSBios\\Permissions\\Rbac"
+      "component": "MSBios\\Permissions\\Acl"
     }
   }
 }
